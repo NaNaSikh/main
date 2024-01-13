@@ -1,70 +1,38 @@
-// import './App.css';
-// import Cataloge from './components/cataloge';
-// import Nav from './components/Nav';
-// import { BrowserRouter,Routes,Route } from 'react-router-dom';
-
-// function App() {
-//   return (
-    
-//      <div className = "App">
-//        <BrowserRouter>
-//        <Routes>
-//         <Route>
-
-//         </Route>
-//        </Routes>
-//            {/* <Nav></Nav> */}
-//           {/* <div className='cataloge'>
-//     //      <Cataloge></Cataloge>
-//     //      </div>
-//     //      <div className='main-page'>
-//     //      <Routes>
-//     //         <Route path = "/" element={<h1>Product components</h1>}></Route>
-//     //         <Route path = "/add" element={<h1>Add product</h1>}></Route>
-//     //         <Route path = "/update" element={<h1>Update components</h1>}></Route>
-//     //         <Route path = "/longout" element={<h1>Longout</h1>}></Route>
-//     //         <Route path = "/signup" element={<h1>signup</h1>}>
-//     //         </Route>
-//     //      </Routes>
-//     //      </div> */}
-
-//     //     </BrowserRouter>
-
-//     // </div>
-//   );
-// }
-
-// export default App;
 
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Container from './components/Container';
+import MovieComponent from './components/cataloges/MovieComponent';
+import SportComponent from './components/cataloges/SportComponent';
+import MusicComponent from './components/cataloges/MusicComponent';
+import Profile from './components/Profile/Profile';
+import Register from './components/Profile/Register';
+import Tickets from './components/Profile/Tickets';
+import Logout from './components/Profile/Logout';
+import Longin from './components/Profile/Login';
 function App() {
   return (
-   <div className = "App">
-    
+    <div className="App">
       <BrowserRouter>
-      <Nav></Nav>
-       <Routes>
-        <Route path = "/"  element={<Container></Container>}> hi</Route>
-        <Route path = "/add" element={<h1>Add product</h1>}></Route>
-        <Route path = "/update" element={<h1>Update components</h1>}></Route>
-        <Route path = "/logout" element={<h1>Logout</h1>}></Route>
-        <Route path = "/signup" element={<h1>hello</h1>}>
-        </Route>
+        <Nav />
 
-       </Routes>
-       <Footer></Footer>
+        <Routes>
+          <Route path="/" element={<Container />} />
+          <Route path="/Movies" element={<MovieComponent />} />
+          <Route path="/Music" element={<MusicComponent />} />
+          <Route path="/Sport" element={<SportComponent />} />
+          <Route path="/signup" element={<h1>hello</h1>} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Tickets" element={<Tickets />} />
+          <Route path="/Logout" element={<Logout />} />
+        </Routes>
+
+        <Footer />
       </BrowserRouter>
-
-
-
-
-
-      
-   </div>
+    </div>
   );
 }
 
